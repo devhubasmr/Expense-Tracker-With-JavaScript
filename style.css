@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+:root{
+    --bakcground-color-:#141E46;
+    --btn-color-:#283593;
+    --days-color-:#C5CAE9;
+    --text-color-:#333;
+    --text-hover-color-:#fff;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: poppins;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bakcground-color-);
+    color: var(--text-color-);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fffdfd;
+    width: 1000px;
+    height: 600px;
+    padding: 20px;
+    border-radius: 20px;  
+}
+
+#userRightsSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#userRights, #remainingRightsSection input{
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 30px;
+    align-content: center;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color:#eee;
+    border: none;
+    outline: none;
+}
+.user-agent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.claender-section,.data-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 550px;
+    
+
+}
+.data-section{
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+    margin-right: 20px;
+}
+
+.month-year-container {
+    height: 500px;
+    padding-bottom: 20px;
+    background-color: #fff;
+}
+.cleander-data-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.month-year-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.month-year-field span {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color-);
+}
+
+.month-select, .year-select {
+    padding: 5px;
+    outline: none;
+    width: 120px;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    background-color: var(--days-color-);
+}
+
+
+input[type="number"], input[type="text"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button{
+    padding: 10px 15px;
+    background-color: var(--btn-color-);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    color: #fff;
+    width: 200px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: all 0.3s linear;
+}
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #3333337f;
+    margin: 15% auto;
+    padding: 20px;
+    outline: none;
+    width: 30%;
+}
+.popup-content h2{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.popup-content h3{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.popup-content label{
+    font-size: 18px;
+}
+.popup-content input{
+    border: none;
+    background-color: #eee;
+    height: 35px;
+    margin-top:5px ;
+}
+.transaction-wrapper{
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+#transactionType{
+    background-color: var(--days-color-);
+    width: 120px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.btn-section{
+    display: flex;
+    justify-content:space-between;
+}
+
+#dailyTransactions {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+.weekday-header {
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    background-color: var(--btn-color-); /* Example background color */
+    /* Other styles as needed */
+}
+
+.day {
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--days-color-);
+    transition: all 0.3s linear;
+}
+.day:hover{
+    background-color: var(--btn-color-);
+    color: #fff;
+}
+
+#fixedCostsSection, #doneTransactions {
+    margin-top: 20px;
+}
+.transactions-list,.expenses-list {
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    height: 100px;
+    overflow-y: auto;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.transaction-item span {
+    margin-right: 10px;
+}
+.final-screen{
+    padding-top: 10px;
+    height: 550px;
+}
+.done-screen{
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+}
+.done-screen h1{
+    text-align: center;
+    font-size: 20px;
+}
+

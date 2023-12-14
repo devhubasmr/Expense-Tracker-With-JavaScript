@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker | Dev Hub ASMR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <section class="data-section" >
+
+            <div id="userRightsSection" >
+                <label for="userRights">Your Salary :</label>
+                <input type="number" id="userRights" name="userRights">
+            </div>
+
+            <div id="monthYearSelection" class="month-year-container"  >
+                <div class="cleander-data-wrapper">
+                    <div class="month-year-field">
+                        <span>Select Month</span>
+                        <select id="selectedMonth" class="month-select"></select>
+                    </div>
+                    <div class="month-year-field">
+                        <span>Select Year</span>
+                        <select id="selectedYear" class="year-select"> </select>
+                    </div>
+                    <button id="generateCalendar" class="generate-calendar-btn">Generate Calendar</button>
+                </div>
+                <div id="dailyTransactions"></div>
+            </div>
+
+            <div class="user-agent">
+                <button id="openFixedCostsPopup">Add Fixed Costs</button>
+                <button id="exportTransactions">Export Transactions</button>
+            </div>
+        </section>
+
+        <section class="claender-section">
+            <div class="final-screen" >
+                <h4>List of transactions :</h4>
+                <div id="doneTransactions" class="done-screen"><h1>No Transaction Registered</h1></div>
+            </div>
+            <div id="remainingRightsSection">
+                <label for="remainingRights">Remaining Rights:</label>
+                <input type="text" id="remainingRights" name="remainingRights" readonly>
+            </div>
+        </section>
+
+        <div id="dailyTransactionPopup" class="popup" >
+            <div class="popup-content">
+            
+                <h2>Transaction for Day <span id="selectedDay"></span></h2>
+                <label for="transactionName">Transaction Name :</label>
+                <input type="text" id="transactionName" name="transactionName">
+                <label for="transactionAmount">Amount :</label>
+                <input type="number" id="transactionAmount" name="transactionAmount">
+                <div class="transaction-wrapper">
+                    <label for="transactionType">Transaction Type:</label>
+                    <select id="transactionType">
+                        <option value="earned">Earned</option>
+                        <option value="spent">Spent</option>
+                    </select>
+                </div>
+
+                <h3>Daily Transactions :</h3>
+                <div id="dailyTransactionsList" class="transactions-list"></div>
+                <div class="btn-section">
+                    <button id="saveTransaction">Add Transaction</button>
+                    <button class="closeDailyTransaction">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="fixedCostsPopup" class="popup">
+            <div class="popup-content">
+                <h2>Fixed Costs</h2>
+                <label for="fixedCostName">Cost Name :</label>
+                <input type="text" id="fixedCostName" name="fixedCostName">
+                <label for="fixedCostAmount">Amount :</label>
+                <input type="number" id="fixedCostAmount" name="fixedCostAmount">
+                <h3>Fixed Expenses</h3>
+                <div id="fixedExpensesList" class="expenses-list"></div>
+                
+                <div class="btn-section">
+                    <button id="addFixedCost">Add Fixed Cost</button>
+                    <button class="closeFixedCosts">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
